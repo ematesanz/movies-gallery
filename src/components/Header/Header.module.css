@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1;
+  padding: 35px 30px;
+}
+
+.search {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  width: 300px;
+}
+
+.favorites{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  background-size: 100%;
+}
+
+img.active {
+  content: url("../../img/star-active.png");
+}

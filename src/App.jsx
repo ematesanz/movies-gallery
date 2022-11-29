@@ -1,5 +1,8 @@
-import {useState, useEffect} from 'react';
-import styles from './App.module.css';
+import { useState, useEffect } from 'react';
+import Header from './components/Header'
+import List from './components/List'
+
+import styles from './components/Header/Header.module.css';
 const API_KEY = 'fc0d92f47110bc6797816aec0da90d03'
 
 function useFetchData() {
@@ -23,60 +26,19 @@ function useFetchData() {
   return { loading, data, setData };
 }
 
-const searchMovie = (value, data, setSearch, isSearch) => 
-  isSearch ? 
-    setSearch(data.filter((movie) => movie.title.includes(value))) : 
-    setSearch(data.filter((movie) => movie.favorite))
-
-const Input = ({onChange}) => {
-  return (
-    <div>
-      <label htmlFor="seach">What do you fancy today? </label>
-      <input
-        id="search"
-        placeholder="Smile"
-        onChange={onChange}
-      />
-    </div>
-  )
-}
-
-const toggleFavorite = (index, setData) => { 
-  setData(list => list.map((item, i) =>
-    i === index ? { ...item, 'favorite': item.favorite ? !item.favorite : true } : item
-  ));
-}
-
-const List = ({list, setData}) =>  
-  list.map((item, index) => {
-  const isFavorite = item.favorite ? "active" : "inactive";
-  return (
-    <div key={item.key}>
-      <h2>{item.title}</h2>
-      <img src={`https://image.tmdb.org/t/p/w92${item['poster_path']}`} alt={item.title} />
-      <img
-            className={styles[isFavorite]}
-            alt="star"
-            onClick={() => toggleFavorite(index, setData)}
-      />
-    </div>
-  )})
-
 function App() {
   const { loading, data, setData } = useFetchData();
   const [ search, setSearch ] = useState([]);
 
   if(loading){
     return <p>Loading... </p>
-   }
-   return (
+  }
+  return (
     <div>
-      <Input onChange={event => searchMovie(event.target.value, data, setSearch, true)} />
-      <input type="button" value="My Favorites" onClick={event => searchMovie(event.target.value, data, setSearch, false)}/>
-      <List list = {search.length ? search : data} setData={setData} />
+      <Header data={data} setSearch={setSearch} />
+      <List className={styles.movies_list} list = {search.length ? search : data} setData={setData} />
     </div>
   );
-
 }
 
 export default App;
