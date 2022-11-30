@@ -3,7 +3,7 @@
 exports[`App component renders correctly 1`] = `
 <div>
   <p>
-    Loading... 
+    Loading films... 
   </p>
 </div>
 `;

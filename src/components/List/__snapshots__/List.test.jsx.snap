@@ -37,8 +37,12 @@ exports[`List component renders correctly 1`] = `
             class="movie__tag movie__tag--2"
           />
           <img
-            alt="star"
-            class="favorite inactive"
+            alt="Favorite"
+            class="favorite star--inactive"
+          />
+          <img
+            alt="Watch later"
+            class="watch-later watch-later--inactive"
           />
         </div>
         <p

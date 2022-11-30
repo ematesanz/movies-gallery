@@ -1,16 +1,9 @@
 import styles from './List.module.css';
 
-const toggleFavorite = (index, setData) => { 
+const toggleKey = (index, setData, key) => 
   setData(list => list.map((item, i) =>
-    i === index ? { ...item, 'favorite': item.favorite ? !item.favorite : true } : item
+    i === index ? { ...item, [key]: item[key] ? !item[key] : true } : item
   ));
-}
-
-const toggleWatchLater = (index, setData) => { 
-  setData(list => list.map((item, i) =>
-    i === index ? { ...item, 'watchLater': item.watchLater ? !item.watchLater : true } : item
-  ));
-}
 
 const List = ({list, setData}) =>  {
   const listItems = list.map((item, index) => {
@@ -27,8 +20,8 @@ const List = ({list, setData}) =>  {
           <h1 className={styles.movie__title}>{item.title}</h1>
           <div className={`${styles.movie__tag} ${styles['movie__tag--1']}`}>{year}</div>
           <div className={`${styles.movie__tag} ${styles['movie__tag--2']}`}>{item.vote_average}</div>
-          <img className={`${styles.favorite} ${styles[hasFavorite]}`} alt='Favorite' onClick={() => toggleFavorite(index, setData)} />
-          <img className={`${styles['watch-later']} ${styles[hasWatchLater]}`} alt='Watch later' onClick={() => toggleWatchLater(index, setData)} />
+          <img className={`${styles.favorite} ${styles[hasFavorite]}`} alt='Favorite' onClick={() => toggleKey(index, setData, 'favorite')} />
+          <img className={`${styles['watch-later']} ${styles[hasWatchLater]}`} alt='Watch later' onClick={() => toggleKey(index, setData, 'watchLater')} />
         </div>
         <p className={styles.movie__description}>{item.overview}</p>
       </div>

@@ -5,7 +5,9 @@ exports[`Header component renders correctly 1`] = `
   <div
     class="header"
   >
-    <div>
+    <div
+      class="search__container"
+    >
       <label
         for="seach"
       >
@@ -18,8 +20,20 @@ exports[`Header component renders correctly 1`] = `
     </div>
     <div>
       <img
-        alt="star"
-        class="favorites active"
+        alt="Star"
+        class="icon favorites"
+      />
+    </div>
+    <div>
+      <img
+        alt="Watch later"
+        class="icon watch-later"
+      />
+    </div>
+    <div>
+      <img
+        alt="clear"
+        class="icon clear"
       />
     </div>
   </div>

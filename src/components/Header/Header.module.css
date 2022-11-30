@@ -23,10 +23,14 @@ padding-right: 50px;;
   background-size: 100%;
 }
 
-img.star {
+img.favorites {
   content: url("../../img/star-active.png");
 }
 
 img.watch-later {
   content: url("../../img/bookmark-active.png");
+}
+
+img.clear {
+  content: url("../../img/clear.png");
 }
