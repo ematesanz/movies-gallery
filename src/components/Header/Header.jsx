@@ -6,7 +6,7 @@ const Input = ({onChange}) => {
       <label htmlFor="seach">Search </label>
       <input
         className={styles.search}
-        placeholder="What do you fancy today? "
+        placeholder="What do you fancy today?"
         onChange={onChange}
       />
     </div>

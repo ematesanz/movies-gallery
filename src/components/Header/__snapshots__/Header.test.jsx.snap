@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders correctly 1`] = `
+<div>
+  <div
+    class="header"
+  >
+    <div>
+      <label
+        for="seach"
+      >
+        Search 
+      </label>
+      <input
+        class="search"
+        placeholder="What do you fancy today?"
+      />
+    </div>
+    <div>
+      <img
+        alt="star"
+        class="favorites active"
+      />
+    </div>
+  </div>
+</div>
+`;

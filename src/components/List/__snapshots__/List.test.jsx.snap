@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component renders correctly 1`] = `
+<div>
+  <ul
+    class="movies"
+  >
+    <li
+      class="movie"
+    >
+      <div
+        class="movie__film-poster"
+      >
+        <img
+          alt="title"
+          class="movie__img"
+          src="https://image.tmdb.org/t/p/w300/111.jpg"
+        />
+      </div>
+      <div
+        class="movie__content"
+      >
+        <div
+          class="movie__header"
+        >
+          <h1
+            class="movie__title"
+          >
+            title
+          </h1>
+          <div
+            class="movie__tag movie__tag--1"
+          >
+            2022
+          </div>
+          <div
+            class="movie__tag movie__tag--2"
+          />
+          <img
+            alt="star"
+            class="favorite inactive"
+          />
+        </div>
+        <p
+          class="movie__description"
+        >
+          overview
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
