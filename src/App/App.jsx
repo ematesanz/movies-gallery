@@ -6,13 +6,14 @@ import useFetchData from '../customHooks/useFetchData';
 function App() {
   const { loading, data, setData } = useFetchData();
   const [ search, setSearch ] = useState([]);
+  //const [ watchLaterActive, setWatchLaterActive ] = useState([]);
 
   if(loading){
     return <p>Loading... </p>
   }
   return (
-    <div id="app">
-      <Header data={data} setSearch={setSearch} />
+    <div id='app'>
+      <Header data={data} search={search} setSearch={setSearch} />
       <List list = {search.length ? search : data} setData={setData} />
     </div>
   );

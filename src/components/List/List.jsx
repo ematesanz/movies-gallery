@@ -6,11 +6,17 @@ const toggleFavorite = (index, setData) => {
   ));
 }
 
+const toggleWatchLater = (index, setData) => { 
+  setData(list => list.map((item, i) =>
+    i === index ? { ...item, 'watchLater': item.watchLater ? !item.watchLater : true } : item
+  ));
+}
+
 const List = ({list, setData}) =>  {
   const listItems = list.map((item, index) => {
-  const isFavorite = item.favorite ? "active" : "inactive";
+  const hasFavorite = item.favorite ? 'star--active' : 'star--inactive';
+  const hasWatchLater = item.watchLater ? 'watch-later--active' : 'watch-later--inactive';
   const year =  item.release_date ? new Date(item.release_date).getFullYear() : '';
-
   return (
     <li className={styles.movie} key={item.id}>
       <div className={styles['movie__film-poster']}>
@@ -21,7 +27,8 @@ const List = ({list, setData}) =>  {
           <h1 className={styles.movie__title}>{item.title}</h1>
           <div className={`${styles.movie__tag} ${styles['movie__tag--1']}`}>{year}</div>
           <div className={`${styles.movie__tag} ${styles['movie__tag--2']}`}>{item.vote_average}</div>
-          <img className={`${styles.favorite} ${styles[isFavorite]}`} alt="star" onClick={() => toggleFavorite(index, setData)} />
+          <img className={`${styles.favorite} ${styles[hasFavorite]}`} alt='Favorite' onClick={() => toggleFavorite(index, setData)} />
+          <img className={`${styles['watch-later']} ${styles[hasWatchLater]}`} alt='Watch later' onClick={() => toggleWatchLater(index, setData)} />
         </div>
         <p className={styles.movie__description}>{item.overview}</p>
       </div>

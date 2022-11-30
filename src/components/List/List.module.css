@@ -7,7 +7,7 @@
 }
 
 .movie {
-  max-width: 800px;
+  max-width: 600px;
   border-radius: 5px;
   display: flex;
   box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .2);
@@ -26,7 +26,7 @@
 .movie__content {
   background-color: #fff;
   flex: 1;
-  padding: 35px 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -56,10 +56,6 @@
   color: royalblue;
 }
 
-.fa-fire {
-  color: salmon;
-}
-
 .movie__tag {
   font-size: 10px;
   color: #fff;
@@ -78,7 +74,7 @@
   background-color:#FFBBEC;
 }
 
-.favorite{
+.favorite, .watch-later{
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -86,12 +82,20 @@
   background-size: 100%;
 }
 
-img.active {
+img.star--active {
   content: url("../../img/star-active.png");
 }
 
-img.inactive {
+img.star--inactive {
   content: url("../../img/star-inactive.png");
+}
+
+img.watch-later--active {
+  content: url("../../img/bookmark-active.png");
+}
+
+img.watch-later--inactive {
+  content: url("../../img/bookmark-inactive.png");
 }
 
 .movie__description {
